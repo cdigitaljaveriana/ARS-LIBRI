@@ -17,7 +17,6 @@ Este ejercicio cobra especial relevancia en el contexto actual, en el que la dig
 <br><br>
 
 ## Créditos
-__Museo de la Independencia - Casa del Florero__<br>
 __Biblioteca General Alfonso Borrero Cabal, S.J.__
 
 __Docente:__

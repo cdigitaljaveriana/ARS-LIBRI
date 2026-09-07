@@ -1,0 +1,353 @@
+<!-- =========================================================
+ACCESSIBILITY TOOLBAR FOR JEKYLL / GITHUB PAGES
+Features:
+- Increase / decrease font size
+- High contrast mode
+- Dyslexia-friendly font
+- Screen reader (text-to-speech)
+- Keyboard accessible
+- Saves preferences in localStorage
+
+INSTALLATION:
+1. Save this file as accessibility-toolbar.html
+2. Include it in your Jekyll layout:
+   {% raw %}{% include accessibility-toolbar.html %}{% endraw %}
+3. Works on GitHub Pages without plugins
+========================================================= -->
+
+<style>
+  :root {
+    --a11y-bg: #111;
+    --a11y-text: #fff;
+    --a11y-accent: #00d4ff;
+    --a11y-shadow: rgba(0,0,0,.3);
+  }
+
+  #a11y-toolbar {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999999;
+    font-family: Arial, sans-serif;
+  }
+
+  #a11y-toggle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: var(--a11y-bg);
+    color: var(--a11y-text);
+    font-size: 26px;
+    box-shadow: 0 4px 12px var(--a11y-shadow);
+  }
+
+  #a11y-panel {
+    width: 280px;
+    background: white;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    margin-bottom: 12px;
+    display: none;
+  }
+
+  #a11y-panel.active {
+    display: block;
+  }
+
+  #a11y-panel h2 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+
+  .a11y-group {
+    margin-bottom: 16px;
+  }
+
+  .a11y-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+
+  .a11y-buttons {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .a11y-btn {
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #efefef;
+    transition: 0.2s;
+  }
+
+  .a11y-btn:hover,
+  .a11y-btn:focus {
+    background: #ddd;
+    outline: 3px solid var(--a11y-accent);
+  }
+
+  /* HIGH CONTRAST MODE */
+  body.high-contrast {
+    background: #000 !important;
+    color: #fff !important;
+  }
+
+  body.high-contrast a {
+    color: #00ffff !important;
+  }
+
+  body.high-contrast img {
+    filter: grayscale(100%) contrast(120%);
+  }
+
+  /* DYSLEXIA MODE */
+  body.dyslexia-font {
+    font-family: "OpenDyslexic", Arial, sans-serif !important;
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+
+  /* READING HIGHLIGHT */
+  .reading-highlight {
+    background: yellow;
+    color: black;
+  }
+
+  /* MOBILE */
+  @media (max-width: 600px) {
+    #a11y-panel {
+      width: calc(100vw - 40px);
+    }
+  }
+</style>
+
+<div id="a11y-toolbar">
+
+  <div id="a11y-panel" aria-label="Accessibility settings">
+
+    <h2>Accesibilidad</h2>
+
+    <!-- FONT SIZE -->
+    <div class="a11y-group">
+      <label>Tamaño de Fuentes</label>
+
+      <div class="a11y-buttons">
+        <button class="a11y-btn" id="font-decrease" aria-label="Decrease font size">
+          A-
+        </button>
+
+        <button class="a11y-btn" id="font-reset" aria-label="Reset font size">
+          Reset
+        </button>
+
+        <button class="a11y-btn" id="font-increase" aria-label="Increase font size">
+          A+
+        </button>
+      </div>
+    </div>
+
+    <!-- CONTRAST -->
+    <div class="a11y-group">
+      <label>Contraste</label>
+
+      <button class="a11y-btn" id="contrast-toggle">
+        Alto Contraste
+      </button>
+    </div>
+
+    <!-- DYSLEXIA FONT -->
+    <div class="a11y-group">
+      <label>Fuente</label>
+
+      <button class="a11y-btn" id="dyslexia-toggle">
+        Fuente Dislexia
+      </button>
+    </div>
+
+    <!-- SCREEN READER -->
+    <div class="a11y-group">
+      <label>Lector</label>
+
+      <div class="a11y-buttons">
+        <button class="a11y-btn" id="read-page">
+          Leer Página
+        </button>
+
+        <button class="a11y-btn" id="stop-reading">
+          Parar
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- TOGGLE BUTTON -->
+  <button
+    id="a11y-toggle"
+    aria-label="Open accessibility menu"
+    aria-expanded="false"
+  >
+    ♿
+  </button>
+
+</div>
+
+<script>
+(function () {
+
+  const body = document.body;
+
+  const panel = document.getElementById('a11y-panel');
+  const toggle = document.getElementById('a11y-toggle');
+
+  let currentScale = Number(localStorage.getItem('fontScale')) || 1;
+
+  // =============================
+  // PANEL TOGGLE
+  // =============================
+
+  toggle.addEventListener('click', () => {
+
+    panel.classList.toggle('active');
+
+    const expanded =
+      toggle.getAttribute('aria-expanded') === 'true';
+
+    toggle.setAttribute('aria-expanded', !expanded);
+  });
+
+  // =============================
+  // FONT SIZE
+  // =============================
+
+  function applyFontScale(scale) {
+    body.style.fontSize = scale + 'em';
+    localStorage.setItem('fontScale', scale);
+  }
+
+  applyFontScale(currentScale);
+
+  document.getElementById('font-increase')
+    .addEventListener('click', () => {
+
+      currentScale += 0.1;
+      applyFontScale(currentScale);
+    });
+
+  document.getElementById('font-decrease')
+    .addEventListener('click', () => {
+
+      currentScale = Math.max(0.8, currentScale - 0.1);
+      applyFontScale(currentScale);
+    });
+
+  document.getElementById('font-reset')
+    .addEventListener('click', () => {
+
+      currentScale = 1;
+      applyFontScale(currentScale);
+    });
+
+  // =============================
+  // HIGH CONTRAST
+  // =============================
+
+  if (localStorage.getItem('contrast') === 'true') {
+    body.classList.add('high-contrast');
+  }
+
+  document.getElementById('contrast-toggle')
+    .addEventListener('click', () => {
+
+      body.classList.toggle('high-contrast');
+
+      localStorage.setItem(
+        'contrast',
+        body.classList.contains('high-contrast')
+      );
+    });
+
+  // =============================
+  // DYSLEXIA FONT
+  // =============================
+
+  if (localStorage.getItem('dyslexia') === 'true') {
+    body.classList.add('dyslexia-font');
+  }
+
+  document.getElementById('dyslexia-toggle')
+    .addEventListener('click', () => {
+
+      body.classList.toggle('dyslexia-font');
+
+      localStorage.setItem(
+        'dyslexia',
+        body.classList.contains('dyslexia-font')
+      );
+    });
+
+  // =============================
+  // TEXT TO SPEECH
+  // =============================
+
+  let speech;
+
+ document.getElementById('read-page')
+  .addEventListener('click', () => {
+
+    speechSynthesis.cancel();
+
+    const text = document.body.innerText;
+
+    speech = new SpeechSynthesisUtterance(text);
+
+    // Obtener voces disponibles
+    const voices = speechSynthesis.getVoices();
+
+    // Buscar voz en español
+    const spanishVoice = voices.find(voice =>
+      voice.lang.includes('es')
+    );
+
+    // Asignar voz encontrada
+    if (spanishVoice) {
+      speech.voice = spanishVoice;
+      speech.lang = spanishVoice.lang;
+    } else {
+      speech.lang = 'es-ES';
+    }
+
+    // Configuración
+    speech.rate = 0.9;
+    speech.pitch = 1;
+    speech.volume = 1;
+
+    speechSynthesis.speak(speech);
+
+  });
+
+  // =============================
+  // KEYBOARD ACCESSIBILITY
+  // =============================
+
+  document.addEventListener('keydown', (e) => {
+
+    // ALT + A opens toolbar
+
+    if (e.altKey && e.key.toLowerCase() === 'a') {
+
+      panel.classList.toggle('active');
+
+      toggle.focus();
+    }
+  });
+
+})();
+</script>

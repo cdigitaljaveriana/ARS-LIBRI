@@ -153,11 +153,14 @@ p {
 
 
 .text-dark {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-dark-rgb), var(--bs-text-opacity)) !important;
-    font-family: "Notable", sans-serif;
-    letter-spacing: 1px;
+	--bs-text-opacity: 1;
+	font-family: "Notable", sans-serif;
+	font-style: normal;
+	letter-spacing: 0px;
+	color: #ed4e00 !important;
 }
+
+
 .text-white {
 	--bs-text-opacity: 1;
 	font-family: "SUSE Mono", sans-serif !important;

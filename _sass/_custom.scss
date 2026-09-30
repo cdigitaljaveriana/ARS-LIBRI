@@ -140,10 +140,9 @@ font-weight: regular!important;
 }
 
 
-
 p {
-	font-family: 'Roboto', sans-serif !important;
-	font-weight: bold !important;
+    font-family: "SUSE Mono", sans-serif;
+    font-size: 14px;
 }
 
 
@@ -217,14 +216,15 @@ tbody, td, tfoot, th, thead, tr {
 
 
 body {
-font-family: Roboto;
+font-family: "SUSE Mono", sans-serif;
 font-size: 1.2em;
-color: rgb(2,14,4);      
+color: #2a2a2a;    
 background-color: #fff;   
 opacity: 1;
 background-size: 22px 22px;
       
 }  
+
 
 
 .img-thumbnail {

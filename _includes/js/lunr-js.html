@@ -10,7 +10,7 @@ function lunr_search () {
   /* basic search that supports operators */
   var result = idx.search(query); 
   resultdiv.innerHTML = "";
-  var newresults = '<tr><td><h4 class="mt-3">' + result.length + ' Result(s) found</h4></td></tr>';
+  var newresults = '<tr><td><h4 class="mt-3">' + result.length + ' Resultado(s) encontrado(s)</h4></td></tr>';
   for (var item in result) {
     var ref = result[item].ref;
     var itemHref = cb_items[ref].parentid ?  "{{ '/item.html' | relative_url | append: '?id=' }}" + cb_items[ref].parentid + "#" + cb_items[ref].objectid : "{{ '/item.html' | relative_url | append: '?id=' }}" + cb_items[ref].objectid;

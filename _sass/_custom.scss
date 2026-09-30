@@ -95,6 +95,13 @@ a:hover.btn-outline-primary {
 	border-top: 1px solid #813a1747 !important;
 }
 
+
+.card-img, .card-img-top {
+    font-size: 12px;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
 /* texto banner */
 .display-4 {
     font-size: calc(1.475rem + 3vw) !important;

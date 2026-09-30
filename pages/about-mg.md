@@ -23,29 +23,14 @@ __Docente:__
 Clementina Grillo<br>
 
 __Bibliotecaria:__
+Andrea <br>
 
 __Practicante:__
+Camilo <br>
 
 __Estudiantes:__
-ALCOCER QUESSEP,JULIANA,
-CANTILLO GUTIERREZ,VERONICA,
-CARVAJAL SALCEDO,LAURA VALENTINA,
-CASTRO CASAS,MARIAN VALENTINA,
-DE LA CRUZ GALIS,MARIA DEL PILAR,
-FORERO CASTAÑEDA,MARIA SALOME,
-GARCIA MOLANO,MARIA PAULA,
-OCHOA OSORIO,LUCIA,
-PAREDES MONTOYA,FRANCESCO MATEO, 
-PEÑA DESMOINEAUX,NATALIA MARIA,
-PEREZ BARBOSA,MARIA CAMILA,
-POLO RUBIANO,ALBA ROCIO,
-RODRIGUEZ DELGADO,MARIANA
-RODRIGUEZ MORENO,TOMAS,
-RUIZ GUTIERREZ,ANA GABRIELA,
-SABOGAL TRIANA,SARA MANUELA,
-SILGADO SUAREZ,JUAN PABLO,
-SILVA HINESTROZA,PAULA,
-UREÑA GUTIERREZ,KAL-EL THOMAS,<br>
+Juliana Alcocer Quessep, Verónica Cantillo Gutierrez, Laura Valentina Carvajal Salcedo, Marian Valentina Castro Casas, María del Pilar de la Cruz Galis, María Salomé Forero Castañeda, María Paula García Molano, Lucía Ochoa Osorio, Francesco Mateo Paredes Montoya, Natalia María Peña Desmoineaux, María Camila Perez Barbosa, Alba Rocío Polo Rubiano, Mariana Rodriguez Delgado, Tomas Rodriguez Moreno, Ana Gabriela Ruiz Gutierrez, Sara Manuela Sabogal Triana, Juan Pablo Silgado Suarez, Paula Silva Hinestrosa, Kal-el Thomas Ureña Gutierrez
+<br>
 
 __Plataforma:__
 Collection Builder<br> 

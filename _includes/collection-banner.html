@@ -48,7 +48,7 @@ var featuredImageInt = function (cb_items) {
         }
         var featuredUrl = featuredItem.parentid ?  "{{ '/item.html' | relative_url | append: '?id=' }}" + featuredItem.parentid + "#" + featuredItem.objectid : "{{ '/item.html' | relative_url | append: '?id=' }}" + featuredItem.objectid;
         document.getElementById("home-banner").style.backgroundImage = bgUrl;
-        document.getElementById("featured-image-link").innerHTML = `<a class="text-white fs-6" href="${featuredUrl}">Featured Image</a>`;
+        document.getElementById("featured-image-link").innerHTML = `<a class="text-white fs-6" href="${featuredUrl}">Imagen destacada</a>`;
     }
 }
 // add feature function to includeFunctions array

@@ -97,15 +97,14 @@ a:hover.btn-outline-primary {
 
 /* texto banner */
 .display-4 {
-	font-size: calc(1.475rem + 3.5vw) !important;
-	font-weight: 300 !important;
-	background-color: rgba(255, 255, 255, 0) !important;
-	font-family: "Notable", sans-serif;
- 	font-style: normal;
-	letter-spacing: 3px;
-	color: #ed4e00;
-	text-align: left!important;
-	
+    font-size: calc(1.475rem + 3vw) !important;
+    font-weight: 300 !important;
+    background-color: rgba(255,255,255,0) !important;
+    font-family: "Notable", sans-serif;
+    font-style: normal;
+    letter-spacing: 0px;
+    color: #ed4e00;
+    text-align: left !important;
 }
 
 

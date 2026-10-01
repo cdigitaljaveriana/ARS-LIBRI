@@ -15,7 +15,7 @@
         var format_buttons = "";
         var image_count = item_formats.filter(f => { return f.includes("image") }).length;
         if (image_count > 0) {
-            format_buttons += image_count + ' <a class="text-dark" href="{{ "/browse.html" | relative_url }}#image">Images <svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-image"/></svg></a><br>';
+            format_buttons += image_count + ' <a class="text-dark" href="{{ "/browse.html" | relative_url }}#image">Imagenes <svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-image"/></svg></a><br>';
         }
         var audio_count = item_formats.filter(f => { return f.includes("audio") }).length;
         if (audio_count > 0) {
@@ -35,7 +35,7 @@
         }
         var compound_count = item_formats.filter(f => { return f.includes("compound") }).length;
         if (compound_count > 0) {
-            format_buttons += compound_count + ' <a class="text-dark" href="{{ "/browse.html" | relative_url }}#compound_object">Compound Objects <svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg></a><br>';
+            format_buttons += compound_count + ' <a class="text-dark" href="{{ "/browse.html" | relative_url }}#compound_object">Objects Compuestos<svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg></a><br>';
         }
         var multiple_count = item_formats.filter(f => { return f.includes("multiple") }).length;
         if (multiple_count > 0) {

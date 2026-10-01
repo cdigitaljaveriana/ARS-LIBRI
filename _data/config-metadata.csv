@@ -1,15 +1,15 @@
 field,display_name,browse_link,external_link
-title,Título,
-creator,Autor del libro,
-date,Fecha de publicación,
-description,Descripción del gif,
-subject,Temas,true
-location,Lugar de publicación
-latitude,Latitud
-longitude,Longitud
-source,Imprenta
+title,Título,,
+creator,Autor del libro,,
+date,Fecha de publicación,,
+description,Descripción del gif,,
+subject,Temas,true,
+location,Lugar de publicación,,
+latitude,Latitud,,
+longitude,Longitud,,
+source,Imprenta,,
 identifier,Número topográfico,,
-type,Tipo de archivo,
-format,Formato,
-rights,Cómo citar,
+type,Tipo de archivo,,
+format,Formato,,
+rights,Cómo citar,,
 rightsstatement,Ley de derecho de autor de Colombia,,true

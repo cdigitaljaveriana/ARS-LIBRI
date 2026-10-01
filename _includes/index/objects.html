@@ -35,7 +35,7 @@
         }
         var compound_count = item_formats.filter(f => { return f.includes("compound") }).length;
         if (compound_count > 0) {
-            format_buttons += compound_count + ' <a class="text-dark" href="{{ "/browse.html" | relative_url }}#compound_object">Objects Compuestos<svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg></a><br>';
+            format_buttons += compound_count + ' <a class="text-dark" href="{{ "/browse.html" | relative_url }}#compound_object">Objetos Compuestos<svg class="bi icon-sprite text-body" fill="currentColor" aria-hidden="true"><use xlink:href="{{ '/assets/lib/cb-icons.svg' | relative_url }}#icon-compound-object"/></svg></a><br>';
         }
         var multiple_count = item_formats.filter(f => { return f.includes("multiple") }).length;
         if (multiple_count > 0) {
